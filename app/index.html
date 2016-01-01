@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="F1Feeder" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="F1FeederApp" class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +16,26 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
+    <script src="driver/DriverController.js"></script>
   </head>
-  <body>
-    
+  <body ng-app="F1FeederApp" ng-controller="DriverController">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">Drivers Championship Standings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="driver in driverList">
+          <td>{{$index + 1 }}</td>
+          <td>
+            <img src="img/flags/{{driver.nationality}}.png">
+            {{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+          </td>
+          <td>{{driver.Constructors[0].name}}</td>
+          <td>{{driver.points}}</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
