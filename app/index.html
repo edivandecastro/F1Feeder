@@ -17,6 +17,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="driver/DriverController.js"></script>
+    <script src="service/ServiceDriver.js"></script>
   </head>
   <body ng-app="F1FeederApp" ng-controller="DriverController">
     <table>
@@ -29,7 +30,7 @@
         <tr ng-repeat="driver in driverList">
           <td>{{$index + 1 }}</td>
           <td>
-            <img src="img/flags/{{driver.nationality}}.png">
+            <img src="img/flags/{{driver.Driver.nationality}}.png">
             {{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
           </td>
           <td>{{driver.Constructors[0].name}}</td>
