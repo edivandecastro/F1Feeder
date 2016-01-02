@@ -1,6 +1,6 @@
-angular.module('F1FeederApp.Service', [])
+var f1FeederAppSevice = angular.module('F1FeederApp.Service', []);
 
-.factory('ErgastApiService', function($http) {
+f1FeederAppSevice.factory('ErgastApiService', function($http) {
   var ergastAPI = {};
 
   ergastAPI.getDrivers = function() {
