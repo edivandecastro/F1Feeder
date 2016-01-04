@@ -7,5 +7,16 @@ angular.module('F1FeederApp', [
   'F1FeederApp.Service'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/'});
+  $routeProvider.
+    when('/drivers', {
+      templateUrl: 'partials/drivers.html',
+      controller: 'DriversController'
+    }).
+    when('/drivers/:id', {
+      templateUrl: 'partials/driver.html',
+      controller: 'DriverController'
+    }).
+    otherwise({
+      redirecTo: '/'
+    });
 }]);
